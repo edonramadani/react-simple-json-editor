@@ -262,6 +262,7 @@ export const JSONEditor: React.FC<JSONEditorProps> = ({
             onChange={handleEditorChange}
             beforeMount={handleEditorWillMount}
             onValidate={handleEditorValidation}
+            height={300}
           />
         </Stack.Item>
         <Stack.Item
