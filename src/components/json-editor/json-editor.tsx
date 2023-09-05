@@ -251,7 +251,7 @@ export const JSONEditor: React.FC<JSONEditorProps> = ({
             path={path}
             value={schemaValue}
             options={{
-              automaticLayout: true,
+              automaticLayout: false,
               autoClosingBrackets: "always",
               autoClosingQuotes: "always",
               formatOnPaste: true,
