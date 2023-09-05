@@ -38,6 +38,7 @@ type Monaco = typeof Monaco
 const stackStyles: IStackStyles = {
   root: {
     height: "inherit",
+    minHeight: "350px",
     borderTop: BorderLine,
     borderRight: BorderLine,
     borderBottom: BorderLine,
