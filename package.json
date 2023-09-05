@@ -1,7 +1,12 @@
 {
-  "name": "react-simple-json-editor",
+  "name": "react-editor-simple-json",
   "description": "A simple online json editor",
-  "keywords": ["react", "simple", "json", "editor"],
+  "keywords": [
+    "react",
+    "simple",
+    "json",
+    "editor"
+  ],
   "author": "Edon Ramadani <node.ramadani@gmail.com>",
   "license": "MIT",
   "version": "0.1.0",
@@ -85,5 +90,13 @@
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "source": "./src/lib.js",
-  "type": "module"
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edonramadani/react-simple-json-editor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/edonramadani/react-simple-json-editor/issues"
+  },
+  "homepage": "https://github.com/edonramadani/react-simple-json-editor#readme"
 }

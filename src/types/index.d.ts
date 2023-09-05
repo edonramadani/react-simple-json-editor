@@ -1,1 +1,1 @@
-declare module 'react-json-editor-simple';
+declare module 'react-editor-simple-json';
