@@ -32,6 +32,9 @@ interface JSONEditorProps {
   onChange?: (value: string) => void;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare
+type Monaco = typeof Monaco
+
 const stackStyles: IStackStyles = {
   root: {
     height: "inherit",
@@ -54,7 +57,7 @@ export const JSONEditor: React.FC<JSONEditorProps> = ({
   onChange,
 }): JSX.Element => {
   // const monaco = useMonaco()
-  const [monaco, setMonaco] = useState<Monaco>(null);
+  const [monaco, setMonaco] = useState<Monaco>();
   const [errors, setErrors] = useState<string[]>([]);
   const [isAutoPrettifyOn, toggleAutoPrettifyOn] = useToggle(false);
 
