@@ -23,23 +23,13 @@ module.exports = {
                 },
             },
             {
-                test: /\.(s?c|sa)ss$/,
-                use: [
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            sourceMap: true,
-                            url: false,
-                        },
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            sourceMap: true,
-                        },
-                    },
-                ],
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
             },
+            {
+                test: /\.ttf$/,
+                type: 'asset/resource'
+            }
         ],
     },
     resolve: {

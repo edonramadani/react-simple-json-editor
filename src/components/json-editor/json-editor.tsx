@@ -38,7 +38,6 @@ type Monaco = typeof Monaco
 const stackStyles: IStackStyles = {
   root: {
     height: "inherit",
-    minHeight: "350px",
     borderTop: BorderLine,
     borderRight: BorderLine,
     borderBottom: BorderLine,
@@ -96,7 +95,7 @@ export const JSONEditor: React.FC<JSONEditorProps> = ({
   }, []);
 
   const handleJsonSchemasUpdate = useCallback(() => {
-    monaco?.languages.json.jsonDefaults.setDiagnosticsOptions({
+    monaco?.languages?.json?.jsonDefaults?.setDiagnosticsOptions({
       validate: true,
       schemas: schemaValue
         ? [
@@ -114,7 +113,7 @@ export const JSONEditor: React.FC<JSONEditorProps> = ({
 
   const handleEditorPrettify = useCallback(() => {
     // @ts-ignore
-    editorRef.current?.getAction("editor.action.formatDocument").run();
+    editorRef.current?.getAction("editor.action.formatDocument")?.run();
   }, []);
 
   const handleEditorUpdateValue = useCallback((value?: string) => {
@@ -122,7 +121,7 @@ export const JSONEditor: React.FC<JSONEditorProps> = ({
     if (!editor) return;
     editor.setValue(value || "");
     // @ts-ignore
-    value && editor.getAction("editor.action.formatDocument").run();
+    value && editor.getAction("editor.action.formatDocument")?.run();
   }, []);
 
   const handleClearClick = () => editorRef.current?.setValue("");
@@ -248,10 +247,9 @@ export const JSONEditor: React.FC<JSONEditorProps> = ({
         >
           <Editor
             language="json"
-            path={path}
             value={schemaValue}
             options={{
-              automaticLayout: false,
+              automaticLayout: true,
               autoClosingBrackets: "always",
               autoClosingQuotes: "always",
               formatOnPaste: true,
@@ -262,7 +260,8 @@ export const JSONEditor: React.FC<JSONEditorProps> = ({
             onChange={handleEditorChange}
             beforeMount={handleEditorWillMount}
             onValidate={handleEditorValidation}
-            height={300}
+            height="auto"
+            width="auto"
           />
         </Stack.Item>
         <Stack.Item
